@@ -1,6 +1,6 @@
 <script setup>
 defineProps({
-  pokemon: {name: String},
+  pokemon: {name: String, hp: String},
   opponent: false,
 })
 </script>
@@ -22,7 +22,7 @@ defineProps({
     <progress
         class="progress w-full h-4"
         :class="opponent ? 'progress-warning' : 'progress-success'"
-        value="53"
+        :value="pokemon.hp"
         max="100"></progress>
   </div>
 
