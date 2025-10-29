@@ -1,29 +1,27 @@
 <template>
-  HOMEPAGE
+  <div class="container mx-auto p-8">
+    <h1 class="text-3xl font-bold mb-4">Pokemon Battle</h1>
+    <PokemonCard :pokemon="{name: 'Charmander'}" :opponent="true"/>
+    <PokemonCard :pokemon="{name: 'Bulbasaur'}" />
+    <div class="divider"></div>
+    <div class="grid md:grid-cols-2 grid-cols-1 gap-8">
+      <ActionCard />
+      <LogCard :logs="logs"/>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import { ref, watch, computed } from 'vue';
-import Pokemon from './models/Pokemon';
+import PokemonCard from "./components/PokemonCard.vue";
+import ActionCard from "./components/ActionCard.vue";
+import LogCard from "./components/LogCard.vue";
 
-const player = ref(new Pokemon('Player', 'https://play.pokemonshowdown.com/sprites/ani/charizard.gif', 100));
-const opponent = ref(new Pokemon('Adversaire', 'https://play.pokemonshowdown.com/sprites/ani-back-shiny/pikachu-kantocap.gif', 100));
-const actionCount = ref(0);
-const atkSpecial = ref(true);
+const logs = [
+  "player attack",
+  "Opponent attack",
+  "Player special attack",
+  "Opponent attack",
+  "Player heal",
+]
 
-// // watch(actionCount, (newCount) => {
-// //   if (newCount === 3) {
-// //     atkSpecial.value = true;
-// //     actionCount.value = 0;
-// //   } else {
-// //     atkSpecial.value = false;
-// //   }
-// // })
-
-// function attack(type) {
-
-// }
-// function heal() {
-
-// }
 </script>
