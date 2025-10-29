@@ -1,8 +1,8 @@
 <template>
   <div class="container mx-auto p-8">
     <h1 class="text-3xl font-bold mb-4">Pokemon Battle</h1>
-    <PokemonCard :pokemon="{name: 'Charmander'}" :opponent="true"/>
-    <PokemonCard :pokemon="{name: 'Bulbasaur'}" />
+    <PokemonCard :pokemon="opponent" :opponent="true"/>
+    <PokemonCard :pokemon="player" />
     <div class="divider"></div>
     <div class="grid md:grid-cols-2 grid-cols-1 gap-8">
       <ActionCard />
@@ -23,5 +23,15 @@ const logs = [
   "Opponent attack",
   "Player heal",
 ]
+
+const player = {
+  name: "Dracofeu",
+  img: "dracaufeu.gif"
+}
+
+const opponent = {
+  name: "Charmander",
+  img: "dracaufeu.gif"
+}
 
 </script>
